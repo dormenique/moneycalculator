@@ -1,0 +1,39 @@
+<!--pink1 #e93b81, pink2 #f5abc9, bege #ffe5e2, blue #b6c9f0-->
+
+<body>
+<style> @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap'); </style>
+  
+<div id="box">
+ 
+  <h1>Calculator</h1>
+ 
+  <hr>   
+  
+  <p>Your money:</p>
+  <input type="text" onfocus="this.value=''" value="ex.:1500,00" id="salary"></input>
+  
+    <select id="coin">
+    <option value="choosecoin">Coin</option>
+    <option value="euro">€ Euro</option>
+    <option value="realbr">R$ Real</option>
+    <option value="dollar">$ Dollar</option>
+    </select>
+  
+  <button onClick="okButton()">Ok</button>
+  
+  <hr>
+  
+  <p>Add expenses:
+  <input type="number" placeholder="ex.:400,00" id="addexpense"></input>
+  <button onClick="exButton()">Add</button>
+  </p>
+   
+    <hr id="moneyhr">
+    
+    <ul id="array"> 
+    </ul>
+    
+    <p id="money"></p>
+ 
+</div>
+</body>
