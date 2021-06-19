@@ -1,8 +1,8 @@
-function okButton(){ //função do botão ok
+function okButton(){
   
-  var earnMoney = parseInt(document.getElementById("salary").value); //valor numerico inserido no input
+  var earnMoney = parseInt(document.getElementById("salary").value);
     
-  var coinSel = document.getElementById("coin").value; //seleção de moeda
+  var coinSel = document.getElementById("coin").value;
   
       if (coinSel === "euro"){ 
         moneyCoin = "€";
@@ -14,17 +14,21 @@ function okButton(){ //função do botão ok
         alert("You have to select a coin!")
       }
     
-  return(document.getElementById("money").innerHTML) = "You have " + moneyCoin + earnMoney; //frase abaixo de tudo "you have €1500"
+  document.getElementById("salary").value = "";
+  
+  return(document.getElementById("money").innerHTML) = "You have " + moneyCoin + earnMoney;  
 }
 
-function exButton(){ //função do botao add
-   var earnMoney = parseInt(document.getElementById("salary").value); //valor numerico inserido no primeiro input
-   var debtMoney = parseInt(document.getElementById("addexpense").value); //valor numerico inserido no segundo input
-   
-   var listOfDebt = document.createElement("li"); // cria o elemento lista
-   listOfDebt.textContent = moneyCoin + parseInt(debtMoney); // classifica o textContent do elemento lista como a variavel debtMoney
-   document.getElementById("array").appendChild(listOfDebt); // pega o elemento array (a lista no html) e tem como appendChild o elemento a cima
-
-   //return(document.getElementById("money").innerHTML) = "You have" + " " + moneyCoin + theMoney
+function exButton(){
+   var earnMoney = parseInt(document.getElementById("salary").value);
+   var debtMoney = parseInt(document.getElementById("addexpense").value);
+  
+  document.getElementById("addexpense").value = "";
+  
+   var listOfDebt = document.createElement("li");
+   listOfDebt.textContent = moneyCoin + parseInt(debtMoney);
+   document.getElementById("array").appendChild(listOfDebt);
+  
+ //return(document.getElementById("money").innerHTML) = "You have" + " " + moneyCoin + theMoney
    
 }
