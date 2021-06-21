@@ -1,7 +1,7 @@
 function okButton(){
   
-  var earnMoney = parseInt(document.getElementById("salary").value);
-    
+  var earnMoney = parseFloat(document.getElementById("salary").value).toFixed(2);
+ 
   var coinSel = document.getElementById("coin").value;
   
       if (coinSel === "euro"){ 
@@ -16,19 +16,21 @@ function okButton(){
     
   document.getElementById("salary").value = "";
   
-  return(document.getElementById("money").innerHTML) = "You have " + moneyCoin + earnMoney;  
+  return(document.getElementById("money").innerHTML) = "You have " + moneyCoin + earnMoney; 
 }
 
 function exButton(){
    var earnMoney = parseInt(document.getElementById("salary").value);
-   var debtMoney = parseInt(document.getElementById("addexpense").value);
   
+   var moneyEarn = earnMoney
+   
+   var debtMoney = parseInt(document.getElementById("addexpense").value);
+   
   document.getElementById("addexpense").value = "";
   
-   var listOfDebt = document.createElement("li");
-   listOfDebt.textContent = moneyCoin + parseInt(debtMoney);
-   document.getElementById("array").appendChild(listOfDebt);
-  
- //return(document.getElementById("money").innerHTML) = "You have" + " " + moneyCoin + theMoney
-   
+  var moneyDebt = debtMoney.toFixed(2);
+  var listOfDebt = document.createElement("li");
+  listOfDebt.textContent = moneyCoin + moneyDebt;
+    
+  document.getElementById("array").appendChild(listOfDebt);
 }
