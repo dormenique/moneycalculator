@@ -1,7 +1,7 @@
 function okButton(){
+  var earnMoney = Number(document.getElementById("salary").value).toFixed(2);
+  var theMoney = document.getElementById("money");
   
-  var earnMoney = parseFloat(document.getElementById("salary").value).toFixed(2);
- 
   var coinSel = document.getElementById("coin").value;
   
       if (coinSel === "euro"){ 
@@ -14,23 +14,26 @@ function okButton(){
         alert("You have to select a coin!")
       }
     
+      if(earnMoney.length > 0){
+        theMoney.textContent = "You have " + moneyCoin + earnMoney;
+      }
+  
   document.getElementById("salary").value = "";
   
-  return(document.getElementById("money").innerHTML) = "You have " + moneyCoin + earnMoney; 
+  //document.getElementById("money").innerHTML = "You have " + moneyCoin + earnMoney; 
 }
 
-function exButton(){
-   var earnMoney = parseInt(document.getElementById("salary").value);
-  
-   var moneyEarn = earnMoney
-   
-   var debtMoney = parseInt(document.getElementById("addexpense").value);
+function addButton(){
+  var debtMoney = Number(document.getElementById("addexpense").value).toFixed(2);
    
   document.getElementById("addexpense").value = "";
   
-  var moneyDebt = debtMoney.toFixed(2);
   var listOfDebt = document.createElement("li");
-  listOfDebt.textContent = moneyCoin + moneyDebt;
+  listOfDebt.textContent = moneyCoin + debtMoney;    
+  var debtList = document.getElementById("expenselist").appendChild(listOfDebt);
+
+  var totalMoney = earnMoney - debtMoney
+  
+  document.getElementById("money").innerHTML = "You have " + moneyCoin + totalMoney;
     
-  document.getElementById("array").appendChild(listOfDebt);
 }
