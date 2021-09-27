@@ -24,8 +24,24 @@ function addButton(){
    
   document.getElementById("addexpense").value = "";
   
+   var exCategory = document.getElementById("categories").value;
+  
+       if (exCategory === "home"){ 
+        expenseCat = "Home";
+      } else if (exCategory === "food"){
+        expenseCat = "Food";
+      } else if (exCategory === "fun"){
+        expenseCat = "Fun";
+      } else if (exCategory === "shopping"){
+        expenseCat = "Shopping";
+      } else if (exCategory === "transport"){
+        expenseCat = "Transport";
+      } else {
+        expenseCat = "Other";
+      }
+  
   var listOfDebt = document.createElement("li");
-  listOfDebt.textContent = moneyCoin + debtMoney;    
+  listOfDebt.textContent = moneyCoin + debtMoney + " with " + expenseCat;    
   var debtList = document.getElementById("expenselist").appendChild(listOfDebt);
 
  // var totalMoney = earnMoney - debtMoney;
