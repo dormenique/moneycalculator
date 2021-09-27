@@ -10,7 +10,7 @@
   <hr>   
   
   <p>Your money:</p>
-  <input type="text" onfocus="this.value=''" value="ex.:1500,00" id="salary"></input>
+  <input type="number" placeholder="ex.:1500.00" id="salary"></input>
   
     <select id="coin">
     <option value="choosecoin">Coin</option>
@@ -23,17 +23,27 @@
   
   <hr>
   
-  <p>Add expenses:
-  <input type="number" placeholder="ex.:400,00" id="addexpense"></input>
-  <button onClick="exButton()">Add</button>
-  </p>
+  <p>Add expenses:</p>
+  <input type="number" placeholder="ex.:400.00" id="addexpense"></input>
+
+   <select id="categories">
+    <option value="category">Category</option>
+    <option value="home">Home</option>
+    <option value="food">Food</option>
+    <option value="fun">Fun</option>
+    <option value="shopping">Shopping</option>
+    <option value="transport">Transport</option>
+    <option value="other">Other</option>
+    </select>
+  <button onClick="addButton()">Add</button>
+
    
     <hr id="moneyhr">
     
-    <ul id="array"> 
+    <ul id="expenselist"> 
     </ul>
     
-    <p id="money"></p>
+  <p id="money"></p>
  
 </div>
 </body>
