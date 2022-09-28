@@ -1,7 +1,7 @@
 # Money Calculator
 ### A beautiful calculator for you to track your expenses.
 
-Add your earned money and subtract your expenses.
+Add your earned money and subtract your expenses. http://moneycalculator.vercel.app
 
 This is a JavaScript Vanilla project that I invented for me to track how much money I am spending in a prettier way (thank God that we have CSS!)
 
