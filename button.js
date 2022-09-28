@@ -1,7 +1,7 @@
 function okButton() {
-  var yourMoney = Number(document.getElementById("salary").value).toFixed(2);
-  console.log(yourMoney);
-  var coinSelected = document.getElementById("coin").value;
+  const yourMoney = Number(document.getElementById("salary").value).toFixed(2);
+
+  let coinSelected = document.getElementById("coin").value;
 
   if (coinSelected === "euro") {
     moneyCoin = "€";
@@ -13,41 +13,47 @@ function okButton() {
     alert("You have to select a coin!");
   }
 
-  var theMoney = document.getElementById("money");
-  theMoney.textContent = "You have " + moneyCoin + yourMoney;
+  let money = document.getElementById("money");
+  money.textContent = "You have " + moneyCoin + yourMoney;
 
   document.getElementById("salary").value = "";
 }
 
 function addButton() {
-  var debtMoney = Number(document.getElementById("addexpense").value).toFixed(
+  const debtMoney = Number(document.getElementById("addexpense").value).toFixed(
     2
   );
 
   document.getElementById("addexpense").value = "";
 
-  var exCategory = document.getElementById("categories").value;
+  let exCategory = document.getElementById("categories").value;
 
-  if (exCategory === "home") {
-    expenseCategory = "Home";
-  } else if (exCategory === "food") {
-    expenseCategory = "Food";
-  } else if (exCategory === "fun") {
-    expenseCategory = "Fun";
-  } else if (exCategory === "shopping") {
-    expenseCategory = "Shopping";
-  } else if (exCategory === "transport") {
-    expenseCategory = "Transport";
-  } else {
-    expenseCategory = "Other";
+  switch (exCategory) {
+    case "home":
+      exCategory = "Home";
+      break;
+    case "food":
+      exCategory = "Food";
+      break;
+    case "fun":
+      exCategory = "Fun";
+      break;
+    case "shopping":
+      exCategory = "Shooping";
+      break;
+    case "transport":
+      exCategory = "Transport";
+      break;
+    default:
+      exCategory = "Other";
+      break;
   }
 
-  var listOfDebt = document.createElement("li");
-  listOfDebt.textContent = moneyCoin + debtMoney + " with " + expenseCategory;
-  var debtList = document.getElementById("expenselist").appendChild(listOfDebt);
+  const listOfDebt = document.createElement("li");
+  listOfDebt.textContent = moneyCoin + debtMoney + " with " + exCategory;
+  const debtList = document
+    .getElementById("expenselist")
+    .appendChild(listOfDebt);
 
-  var totalMoney = yourMoney - debtMoney;
-  console.log(totalMoney);
-
-  document.getElementById("money").innerHTML = "You have " + moneyCoin; //+ totalMoney;
+  document.getElementById("money").innerHTML = "You have " + moneyCoin;
 }
