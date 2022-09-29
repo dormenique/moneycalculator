@@ -1,3 +1,5 @@
+> This is a WIP project :)
+
 # Money Calculator
 ### A beautiful calculator for you to track your expenses.
 
